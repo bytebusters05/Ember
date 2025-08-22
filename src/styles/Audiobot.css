@@ -1,12 +1,4 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
+
 
 .container {
   background-color: #fff;

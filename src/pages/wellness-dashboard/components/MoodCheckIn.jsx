@@ -1,154 +1,140 @@
 import React, { useState } from 'react';
-import Icon from '../../../components/AppIcon';
-import Button from '../../../components/ui/Button';
-import { motion, AnimatePresence } from 'framer-motion';
+import Icon from './AppIcon';
+import Button from './ui/Button';
 
-const MoodCheckIn = ({ onMoodSubmit, todaysMood }) => {
-  const [selectedMood, setSelectedMood] = useState(todaysMood?.mood || '');
-  const [intensity, setIntensity] = useState(todaysMood?.intensity || 5);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const MoodCheckin = () => {
+  const [selectedMood, setSelectedMood] = useState(null);
+  const [selectedDailyMood, setSelectedDailyMood] = useState(null);
 
-  const moodOptions = [
-    { emoji: '😊', label: 'Happy', value: 'happy', color: 'text-yellow-500' },
-    { emoji: '😌', label: 'Calm', value: 'calm', color: 'text-blue-500' },
-    { emoji: '😐', label: 'Neutral', value: 'neutral', color: 'text-gray-500' },
-    { emoji: '😔', label: 'Sad', value: 'sad', color: 'text-blue-600' },
-    { emoji: '😰', label: 'Anxious', value: 'anxious', color: 'text-orange-500' },
-    { emoji: '😤', label: 'Frustrated', value: 'frustrated', color: 'text-red-500' }
+  const moods = [
+    { name: 'Energetic', emoji: '⚡️' },
+    { name: 'Happy', emoji: '😊' },
+    { name: 'Calm', emoji: '😌' },
+    { name: 'Neutral', emoji: '😐' },
+    { name: 'Tired', emoji: '😴' },
+    { name: 'Stressed', emoji: '😤' },
+    { name: 'Sad', emoji: '😞' },
+    { name: 'Frustrated', emoji: '😠' },
   ];
 
-  const handleSubmit = async () => {
-    if (!selectedMood) return;
-
-    setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    onMoodSubmit({
-      mood: selectedMood,
-      intensity,
-      timestamp: new Date()?.toISOString(),
-      date: new Date()?.toDateString()
-    });
-
-    setIsSubmitting(false);
-  };
+  const dailyMoods = [
+    { name: 'Happy', emoji: '😊' },
+    { name: 'Calm', emoji: '😌' },
+    { name: 'Neutral', emoji: '😐' },
+    { name: 'Sad', emoji: '😞' },
+    { name: 'Stressed', emoji: '😤' },
+    { name: 'Tired', emoji: '😴' },
+  ];
 
   return (
-    <motion.div 
-      className="bg-gradient-to-br from-surface to-card rounded-2xl p-6 shadow-xl border border-border"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      {/* Header */}
-      <div className="flex items-center space-x-3 mb-6">
-        <motion.div 
-          className="w-12 h-12 bg-therapeutic-primary rounded-xl flex items-center justify-center text-white"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <Icon name="Heart" size={22} color="white" />
-        </motion.div>
-        <div>
-          <h2 className="text-xl font-bold text-foreground">Daily Check-In</h2>
-          <p className="text-sm text-muted-foreground">How are you feeling today?</p>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Main Content Area */}
+      <div className="lg:col-span-2 space-y-8">
+        {/* How are you feeling right now? section */}
+        <div className="bg-card border border-border rounded-xl p-6 shadow-soft">
+          <div className="flex items-start mb-4">
+            <div className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center mr-4">
+              <Icon name="HeartPulse" size={24} className="text-therapeutic-primary" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground">How are you feeling right now?</h2>
+              <p className="text-sm text-muted-foreground">This will personalize your dashboard.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {moods.map((mood) => (
+              <button
+                key={mood.name}
+                onClick={() => setSelectedMood(mood.name)}
+                className={`flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-200 transform hover:scale-105 ${
+                  selectedMood === mood.name
+                    ? 'bg-therapeutic-primary border-therapeutic-primary text-white shadow-lg'
+                    : 'bg-surface border-border hover:border-therapeutic-primary/50'
+                }`}
+              >
+                <span className="text-4xl">{mood.emoji}</span>
+                <span className={`mt-2 text-sm font-medium ${selectedMood === mood.name ? 'text-white' : 'text-foreground'}`}>
+                  {mood.name}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Daily Check-In section */}
+        <div className="bg-card border border-border rounded-xl p-6 shadow-soft">
+          <div className="flex items-start mb-4">
+             <div className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center mr-4">
+              <Icon name="CalendarCheck" size={24} className="text-therapeutic-primary" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground">Daily Check-In</h2>
+              <p className="text-sm text-muted-foreground">How are you feeling today?</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
+            {dailyMoods.map((mood) => (
+              <button
+                key={mood.name}
+                onClick={() => setSelectedDailyMood(mood.name)}
+                className={`flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-200 transform hover:scale-105 ${
+                  selectedDailyMood === mood.name
+                    ? 'bg-therapeutic-primary border-therapeutic-primary text-white shadow-lg'
+                    : 'bg-surface border-border hover:border-therapeutic-primary/50'
+                }`}
+              >
+                <span className="text-3xl">{mood.emoji}</span>
+                <span className={`mt-2 text-xs font-medium ${selectedDailyMood === mood.name ? 'text-white' : 'text-foreground'}`}>
+                  {mood.name}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* If already checked in */}
-      {todaysMood ? (
-        <motion.div 
-          className="text-center py-8"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-        >
-          <div className="text-7xl mb-4">
-            {moodOptions.find(m => m.value === todaysMood?.mood)?.emoji}
+      {/* Quick Access Sidebar */}
+      <div className="lg:col-span-1">
+        <div className="bg-card border border-border rounded-xl p-6 shadow-soft">
+          <div className="flex items-start mb-4">
+            <div className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center mr-4">
+              <Icon name="Zap" size={24} className="text-conversion-accent" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground">Quick Access</h2>
+              <p className="text-sm text-muted-foreground">Your one-click wellness tools.</p>
+            </div>
           </div>
-          <h3 className="text-lg font-medium text-foreground mb-2">
-            You’re feeling {moodOptions.find(m => m.value === todaysMood?.mood)?.label.toLowerCase()}
-          </h3>
-          <p className="text-sm text-muted-foreground mb-3">
-            Intensity: {todaysMood?.intensity}/10
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Checked in at {new Date(todaysMood.timestamp)?.toLocaleTimeString()}
-          </p>
-        </motion.div>
-      ) : (
-        <>
-          {/* Mood options */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            {moodOptions.map((mood, idx) => (
-              <motion.button
-                key={mood.value}
-                onClick={() => setSelectedMood(mood.value)}
-                className={`p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1
-                  ${selectedMood === mood.value
-                    ? 'border-therapeutic-primary bg-therapeutic-primary/10'
-                    : 'border-border hover:border-therapeutic-primary/50'
-                  }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <div className="text-4xl mb-2">{mood.emoji}</div>
-                <div className={`text-sm font-semibold ${
-                  selectedMood === mood.value ? 'text-therapeutic-primary' : 'text-foreground'
-                }`}>
-                  {mood.label}
+          <div className="space-y-3">
+            <Button
+              variant="custom"
+              className="w-full justify-start text-left h-auto p-4 bg-red-500/10 border-red-500/20 text-red-600 hover:bg-red-500/20 hover:border-red-500/30"
+            >
+              <div className="flex items-start space-x-3">
+                <Icon name="Phone" size={20} />
+                <div className="flex flex-col">
+                  <span className="font-semibold">Crisis Support</span>
+                  <span className="text-xs font-normal opacity-80">Immediate help when you need it most.</span>
                 </div>
-              </motion.button>
-            ))}
+              </div>
+            </Button>
+            <Button
+              variant="custom"
+              className="w-full justify-start text-left h-auto p-4 bg-blue-500/10 border-blue-500/20 text-blue-600 hover:bg-blue-500/20 hover:border-blue-500/30"
+            >
+               <div className="flex items-start space-x-3">
+                <Icon name="MessageCircle" size={20} />
+                <div className="flex flex-col">
+                  <span className="font-semibold">Chat with MindfulBot</span>
+                  <span className="text-xs font-normal opacity-80">Your AI companion is here to listen.</span>
+                </div>
+              </div>
+            </Button>
           </div>
-
-          {/* Intensity Slider */}
-          <AnimatePresence>
-            {selectedMood && (
-              <motion.div 
-                className="mb-6"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-              >
-                <label className="block text-sm font-medium text-foreground mb-3">
-                  Intensity Level: {intensity}/10
-                </label>
-                <div className="relative">
-                  <input
-                    type="range"
-                    min="1"
-                    max="10"
-                    value={intensity}
-                    onChange={(e) => setIntensity(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gradient-to-r from-green-400 via-yellow-400 to-red-500 rounded-lg appearance-none cursor-pointer"
-                  />
-                  <div className="flex justify-between text-xs text-muted-foreground mt-2">
-                    <span>Low</span>
-                    <span>High</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Submit Button */}
-          <Button
-            onClick={handleSubmit}
-            disabled={!selectedMood}
-            loading={isSubmitting}
-            className="w-full rounded-lg text-white font-medium bg-therapeutic-primary hover:bg-therapeutic-primary/90 transition-all"
-            iconName="Check"
-            iconPosition="left"
-          >
-            Submit Check-In
-          </Button>
-        </>
-      )}
-    </motion.div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default MoodCheckIn;
+export default MoodCheckin;

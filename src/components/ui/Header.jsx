@@ -61,8 +61,8 @@ const Header = ({ className = '' }) => {
           <div className="flex items-center justify-between h-16 px-4 lg:px-6">
             {/* Logo Section */}
             <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-therapeutic-primary rounded-lg breathing-pulse">
-                <img src="public/assets/images/Ember.png" alt="" />
+              <div className="flex items-center justify-center w-14 h-14  rounded-lg breathing-pulse">
+                <img src="public/assets/images/logo_ember.png" alt="" />
               </div>
               <div className="flex flex-col">
                 <h1 className="text-xl font-bold text-foreground">Ember</h1>

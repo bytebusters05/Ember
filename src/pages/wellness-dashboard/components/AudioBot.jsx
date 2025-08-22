@@ -1,6 +1,6 @@
 // EmotionDetector.jsx
 import React, { useState } from "react";
-import "./Audio.css";
+import "../../../styles/AudioBot.css";
 
 const emojiMap = {
   happy: "😊",

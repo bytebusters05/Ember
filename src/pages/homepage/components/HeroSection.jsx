@@ -78,8 +78,8 @@ const HeroSection = ({ onBeginJourney, onExploreResources }) => {
         <div className="max-w-4xl mx-auto">
           {/* Logo and Brand */}
           <div className="flex items-center justify-center space-x-4 mb-8">
-            <div className="w-16 h-16 bg-therapeutic-primary rounded-2xl flex items-center justify-center breathing-pulse shadow-therapeutic">
-            <img src="public/assets/images/Ember.png" alt="" />
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center breathing-pulse shadow-therapeutic">
+            <img src="public/assets/images/logo_ember.png" alt="" />
             </div>
             <div className="text-left">
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground">Ember</h1>

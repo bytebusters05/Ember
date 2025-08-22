@@ -19,7 +19,7 @@ const FeaturesSection = ({ onFeatureClick }) => {
       icon: 'TrendingUp',
       title: 'Personalized Wellness Plans',
       description: 'Customized mental health strategies tailored to your unique needs, goals, and progress milestones.',
-      image: 'https://images.pixabay.com/photo/2017/06/20/22/14/man-2425121_1280.jpg?w=400&h=300&fit=crop',
+      image: 'https://img.freepik.com/free-photo/wellness-diet-plan-healthy-living-icon_53876-121317.jpg?semt=ais_hybrid&w=740&q=80',
       benefits: ['Custom goal setting', 'Progress visualization', 'Adaptive strategies', 'Milestone celebrations'],
       route: '/wellness-dashboard'
     },

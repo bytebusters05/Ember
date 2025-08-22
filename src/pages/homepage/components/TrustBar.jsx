@@ -3,10 +3,6 @@ import Icon from '../../../components/AppIcon';
 
 const TrustBar = () => {
   const trustItems = [
-    { icon: 'Shield', title: 'HIPAA Compliant', description: 'Your privacy is protected' },
-    { icon: 'Brain', title: 'Evidence-Based CBT', description: 'Scientifically proven methods' },
-    { icon: 'UserCheck', title: 'Licensed Therapist Network', description: '500+ verified professionals' },
-    { icon: 'Phone', title: '24/7 Crisis Support', description: 'Always here when you need us' },
   ];
 
   return (

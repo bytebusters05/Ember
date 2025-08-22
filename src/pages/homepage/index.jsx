@@ -97,8 +97,8 @@ const Homepage = () => {
               {/* Brand */}
               <div className="md:col-span-1">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-[#f29819] rounded-lg flex items-center justify-center">
-            <img src="public/assets/images/Ember.png" alt="" />
+                  <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+            <img src="public/assets/images/logo_ember.png" alt="" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground">Ember</h3>
@@ -146,7 +146,7 @@ const Homepage = () => {
 
             <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between">
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Ember. All rights reserved.
+                © {new Date().getFullYear()} Ember. All rights reserved by ByteBusters.
               </p>
               <div className="flex items-center space-x-6 mt-4 sm:mt-0">
                 {/* Social icons */}
