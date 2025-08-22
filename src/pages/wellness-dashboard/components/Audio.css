@@ -1,0 +1,73 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  width: 360px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.03);
+}
+
+h1 {
+  color: #343a40;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+input[type="text"], input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+}
+
+button {
+  padding: 14px 20px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #495057;
+}
+
+.emoji {
+  margin-top: 20px;
+  font-size: 70px;
+  transition: transform 0.3s ease;
+}
