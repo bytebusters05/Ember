@@ -129,17 +129,11 @@ const Header = ({ className = '' }) => {
 
             {/* Crisis Support & Mobile Menu */}
             <div className="flex items-center space-x-3">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleCrisisSupport}
-                className="hidden sm:flex border-accent text-accent hover:bg-accent hover:text-white"
-                iconName="Phone"
-                iconPosition="left"
-                iconSize={16}
-              >
-                Crisis Support
-              </Button>
+              <a
+    onClick={() => window.location.href = "tel:112"}
+    className="text-muted-foreground hover:text-[#f29819] transition-colors"
+  >
+    Crisis Support (112)</a>
               <Button
                 variant="outline"
                 size="icon"

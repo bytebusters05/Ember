@@ -127,7 +127,15 @@ const Homepage = () => {
                 <h4 className="font-semibold text-foreground mb-4">Support</h4>
                 <ul className="space-y-2 text-sm">
                   <li><a href="/professional-connect" className="text-muted-foreground hover:text-[#f29819] transition-colors">Find a Therapist</a></li>
-                  <li><a href="#" className="text-muted-foreground hover:text-[#f29819] transition-colors">Crisis Support</a></li>
+                  <li>
+  <button
+    onClick={() => window.location.href = "tel:112"}
+    className="text-muted-foreground hover:text-[#f29819] transition-colors"
+  >
+    Crisis Support (112)
+  </button>
+</li>
+
                   <li><a href="/contact" className="text-muted-foreground hover:text-[#f29819] transition-colors">Help Center</a></li>
                   <li><a href="/contact" className="text-muted-foreground hover:text-[#f29819] transition-colors">Contact Us</a></li>
                 </ul>

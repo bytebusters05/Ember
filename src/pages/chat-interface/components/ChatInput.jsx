@@ -66,9 +66,7 @@ const ChatInput = ({ onSendMessage, isTyping, disabled, className = '' }) => {
   };
 
   const quickActions = [
-    { label: 'Breathing', icon: 'Wind', action: () => onSendMessage('I need help with breathing exercises') },
-    { label: 'Grounding', icon: 'Anchor', action: () => onSendMessage('Can you guide me through grounding techniques?') },
-    { label: 'Crisis Help', icon: 'Phone', action: () => onSendMessage('I need crisis support'), urgent: true }
+    
   ];
 
   return (

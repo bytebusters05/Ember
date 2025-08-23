@@ -34,7 +34,7 @@ button {
   margin: 12px 0;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  background: linear-gradient(90deg, #eb7134, #eb7134);
   color: white;
   cursor: pointer;
   font-weight: bold;
@@ -44,7 +44,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  background: linear-gradient(90deg, #eb7134,#eb7134);
 }
 
 button:disabled {

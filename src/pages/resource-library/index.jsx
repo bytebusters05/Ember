@@ -411,18 +411,7 @@ const ResourceLibrary = () => {
               )}
 
               {/* Load More Button */}
-              {sortedResources?.length > 0 && (
-                <div className="text-center mt-8">
-                  <Button
-                    variant="outline"
-                    className="px-8"
-                    iconName="Plus"
-                    iconPosition="left"
-                  >
-                    Load More Resources
-                  </Button>
-                </div>
-              )}
+              
             </div>
           </div>
         </div>

@@ -245,11 +245,11 @@ const ChatInterface = () => {
                   <Icon name="History" size={20} />
                 </Button>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-therapeutic-primary rounded-full flex items-center justify-center breathing-pulse">
-                    <Icon name="Brain" size={16} color="white" />
+                  <div className="w-16 h-16  rounded-full flex items-center justify-center breathing-pulse">
+                    <img src="public/assets/images/logo_Ember.png" alt="logo" />
                   </div>
                   <div>
-                    <h1 className="font-semibold text-foreground">MindfulBot</h1>
+                    <h1 className="font-semibold text-foreground">EmberBot</h1>
                     <p className="text-sm text-muted-foreground">
                       {currentMode ? `${currentMode?.replace('-', ' ')?.replace(/\b\w/g, l => l?.toUpperCase())} Mode` : 'Your Thoughtful Companion'}
                     </p>
