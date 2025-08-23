@@ -1,4 +1,10 @@
 # React
+![WhatsApp Image 2025-08-23 at 03 48 53_23815cd5](https://github.com/user-attachments/assets/c56ca7ae-a62f-4fcf-aa11-fa4d58171548)
+![WhatsApp Image 2025-08-23 at 03 49 20_a1e3ee88](https://github.com/user-attachments/assets/3aa42f88-f8ec-4f64-9437-1304b5bb451e)
+<img width="1903" height="863" alt="image" src="https://github.com/user-attachments/assets/d3cf4a5e-d3ab-4c10-b2ea-5f302fea4d65" />
+![WhatsApp Image 2025-08-23 at 03 50 30_646fba7a](https://github.com/user-attachments/assets/703e4d41-244d-474d-94fc-7ac66fb566fe)
+![WhatsApp Image 2025-08-23 at 03 50 50_397182d1](https://github.com/user-attachments/assets/9123c0c9-b8ff-4a71-9a94-67fddff9fc28)
+![WhatsApp Image 2025-08-23 at 03 51 35_fb239ee3](https://github.com/user-attachments/assets/dce020e4-9bbe-4e34-943d-d995415187a2)
 
 A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
 
@@ -13,7 +19,7 @@ A modern React-based project utilizing the latest frontend technologies and tool
 - **Form Management** - React Hook Form for efficient form handling
 - **Animation** - Framer Motion for smooth UI animations
 - **Testing** - Jest and React Testing Library setup
-
+- **Libraries** - PyTorch & Flask
 ## 📋 Prerequisites
 
 - Node.js (v14.x or higher)
@@ -54,25 +60,7 @@ react_app/
 └── vite.config.js      # Vite configuration
 ```
 
-## 🧩 Adding Routes
 
-To add new routes to the application, update the `Routes.jsx` file:
-
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
-
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
-
-  return element;
-};
-```
 
 ## 🎨 Styling
 
@@ -100,6 +88,5 @@ npm run build
 
 ## 🙏 Acknowledgments
 - BYTE BUSTERS
-- Powered by React and Vite
-- Styled with Tailwind CSS
+
 
